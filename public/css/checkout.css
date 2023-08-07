@@ -1,0 +1,67 @@
+.txt-rata {
+    text-align: justify;
+}
+
+.txt-spasi {
+    text-indent: 4em;
+}
+
+/* table */
+th {
+    background: transparent !important;
+}
+table {
+    border-collapse: collapse !important;
+    /* border: none !important; */
+
+}
+
+/* Jumlah Checkout */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    text-align: center;
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 27px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0px 0px 3px;
+    cursor: pointer;
+    user-select: none;
+}
+.quantity-btn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 27px;
+    border: 1px solid #ccc;
+    border-radius: 0px 3px 3px 0px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.quantity-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.quantity-input input {
+    width: 50px;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    margin: 0 px;
+}

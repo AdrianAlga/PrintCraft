@@ -1,0 +1,46 @@
+.login-box {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333131;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #777873;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: #413e3e;
+    font-size: 12px;
+    padding: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.JK {
+    padding-left: 15px !important;
+    padding-bottom: px;
+}
+
+label {
+    color: #981313;
+}
+
+a {
+    color: rgb(106, 102, 102);
+}
+

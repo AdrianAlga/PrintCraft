@@ -1,0 +1,88 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Encode+Sans:wght@500&family=PT+Serif&family=Raleway:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+/* Icon */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* CSS Variabel */
+:root {
+    --orange: #fffffe;
+    --merah: rgba(255, 67, 67, 1);
+    --abu-abu: #fffffe;
+    --abu-abu2: #ffffff;
+    --color5: rgb(150, 115, 255);
+    --font-txt: 'Poppins', sans-serif;
+    --weight-txt-header: 700;
+    --size-txt-header: 40px;
+}
+
+body{
+    background-color: #d4d8f0 !important;
+}
+
+/* Warna txt & baground orange */
+.txt-orange {
+    color: var(--orange) !important;
+}
+
+.txt-color5 {
+    color: var(--color5) !important;
+}
+
+.txt-abu {
+    color: var(--abu-abu2) !important;
+}
+
+.bg-abu-abu {
+    background-color: var(--abu-abu) !important;
+}
+.bg-abu-abu2 {
+    background-color: var(--abu-abu2) !important;
+}
+
+.bg-color5 {
+    background-color: var(--color5) !important;
+}
+
+.bg-orange {
+    background-color: var(--orange) !important;
+}
+
+/* font txt */
+h1,h2,h3,h4,h5,p,th,td,button,span,label{
+    font-family: var(--font-txt);
+}
+
+/* Ketebalan txt Header */
+.font-header {
+    font-weight: var(--weight-txt-header);
+}
+
+/* Ukuran Txt-Header */
+.font-size {
+    font-size: var(--size-txt-header);
+}
+
+body {
+    background-color: rgb(240, 240, 248);
+}
+
+/* link */
+a {
+    text-decoration: none;
+}
+
+/* .box:hover{
+    transform: scale(1.1);
+    transition: .4s;
+} */
+
+.whatsapp {
+    cursor: pointer;
+    position: relative;
+}
+
+.txt-justify{
+    text-align: justify;
+}
