@@ -73,11 +73,6 @@
                       <td>{{ $product->product_category }}</td>
                     </tr>
                     <tr>
-                      <td>Jenis Makanan</td>
-                      <td>:</td>
-                      <td>{{ $product->food_category }}</td>
-                    </tr>
-                    <tr>
                       <td>Harga/Porsi</td>
                       <td>:</td>
                       <td>Rp. {{ number_format($product->price, 0, ',', '.') }}</td>

@@ -143,17 +143,6 @@
                           </tr>
                           <tr>
                             <th scope="col-1">
-                              Jenis Makanan
-                            </th>
-                            <th scope="col">
-                              :
-                            </th>
-                            <th scope="col">
-                              {{ $product->food_category }}
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="col-1">
                               Harga /porsi
                             </th>
                             <th scope="col">

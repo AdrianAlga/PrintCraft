@@ -39,8 +39,7 @@ class AdminProductContoller extends Controller
             "name" => "required|string",
             "price" => "required",
             "stock" => "required|numeric",
-            "product_category" => "required|in:catering,frozen",
-            "food_category" => "required|in:ayam,sapi,risol,sosis",
+            "product_category" => "required|in:desain,cetak",
             "image" => "required|image",
             "description" => "required|string",
         ]);
@@ -80,8 +79,7 @@ class AdminProductContoller extends Controller
             "name" => "required|string",
             "price" => "required",
             "stock" => "required|numeric",
-            "product_category" => "required|in:catering,frozen",
-            "food_category" => "required|in:ayam,sapi,risol,sosis",
+            "product_category" => "required|in:desain,cetak",
             "image" => "nullable|image",
             "description" => "required|string",
         ]);

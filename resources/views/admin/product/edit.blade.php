@@ -69,30 +69,15 @@
                 </div>
                 <div class="container">
                   <div class="row">
-                    <div class="col-6 px-0">
+                    <div class="col-12 px-0">
                       <label for="product_category" class="pb-2">kategori Produk :</label>
                       <select name="product_category" class="form-select form-select-sm @error('product_category') is-invalid @enderror"
                         aria-label="Default select example" id="product_category">
                         <option hidden>Categori Produk</option>
-                        <option value="catering" {{ old('product_category', $product->product_category) == 'catering' ? 'selected' : '' }}>Catering</option>
-                        <option value="frozen" {{ old('product_category', $product->product_category) == 'frozen' ? 'selected' : '' }}>Frozen</option>
+                        <option value="desain" {{ old('product_category', $product->product_category) == 'desain' ? 'selected' : '' }}>Desain</option>
+                        <option value="cetak" {{ old('product_category', $product->product_category) == 'cetak' ? 'selected' : '' }}>Cetak</option>
                       </select>
                       @error('product_category')
-                        <div class="invalid-feedback">
-                          {{ $message }}
-                        </div>
-                      @enderror
-                    </div>
-                    <div class="col-6">
-                      <label for="food_category" class="pb-2">kategori Menu :</label>
-                      <select name="food_category" class="form-select form-select-sm @error('food_category') is-invalid @enderror" aria-label="Default select example" id="food_category">
-                        <option Hidden>Kategori Makanan</option>
-                        <option value="ayam" {{ old('food_category', $product->food_category) == 'ayam' ? 'selected' : '' }}>Ayam</option>
-                        <option value="sapi" {{ old('food_category', $product->food_category) == 'sapi' ? 'selected' : '' }}>Sapi</option>
-                        <option value="risol" {{ old('food_category', $product->food_category) == 'risol' ? 'selected' : '' }}>Risol</option>
-                        <option value="sosis" {{ old('food_category', $product->food_category) == 'sosis' ? 'selected' : '' }}>Sosis</option>
-                      </select>
-                      @error('food_category')
                         <div class="invalid-feedback">
                           {{ $message }}
                         </div>

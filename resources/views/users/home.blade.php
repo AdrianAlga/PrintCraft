@@ -22,7 +22,8 @@
               </form>
             </div>
             <div class="col-2 text-start">
-              <button class="btn" data-bs-toggle="modal" data-bs-target="#cartModal" style="border: none; position: relative;">
+              <button class="btn" data-bs-toggle="modal" data-bs-target="#cartModal"
+                style="border: none; position: relative;">
                 <i class="bi bi-cart fs-3"></i>
                 <span class="text-center text-white fw-bold rounded-circle"
                   style="width: 20px; height: 20px; background: red; position: absolute; top: 0; left: 25px;">
@@ -48,7 +49,7 @@
               </button>
             </div>
           </div>
-          
+
           <div class="row">
             <div class="col-12">
               <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -75,143 +76,57 @@
             </div>
           </div>
 
-          <!-- Navbar Catering  -->
-          <div class="food-category-list ">
-            <div class="row text-center font-txt text-white" style="font-size: 13px">
-              <div class="col-6 my-3 px-1 ">
-                <div class="bg-white shadow-sm py-2 rounded-3 food-category-button catering-category-button bg-orange" style="cursor: pointer">
-                  <img src="{{ asset('/images/chicken-leg.png') }}" alt="img" height="25px" />
-                  <span class="text-abu">Ayam</span>
-                </div>
-                </a>
-              </div>
-              <div class="col-6 my-3 px-1">
-                <div class="bg-white shadow-sm py-2 rounded-3 food-category-button catering-category-button" style="cursor: pointer">
-                  <img src="{{ asset('/images/steak.png') }}" alt="img" height="25px" />
-                  <span class="txt-abu">Sapi</span>
-                </div>
-                </a>
-              </div>
+          <div class="category-content my-3">
+            <div class="row">
+              @foreach ($products as $product)
+                @if ($product['product_category'] == 'desain')
+                  <div class="col-md-3 col-6 p-0 box">
+                    <a href="{{ route('product.detail', ['product' => $product->id]) }}">
+                      <div class="m-1 shadow-sm rounded-4 card">
+                        <div class="text-center">
+                          <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
+                            width="100%" class="rounded-top-4" />
+                        </div>
+                        <div class="py-3 px-2 text-center">
+                          <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                @endif
+              @endforeach
             </div>
           </div>
 
-          <!-- Navbar Frozen -->
-          <div class="food-category-list hide-content">
-            <div class="row text-center font-txt text-white" style="font-size: 13px">
-              <div class="col-6 my-3 px-1">
-                <div class="bg-white shadow-sm py-2 rounded-3 food-category-button frozen-category-button bg-orange" style="cursor: pointer">
-                  <img src="{{ asset('/images/risol.png') }}" alt="img" height="25px" />
-                  <span class="text-abu">Risol</span>
-                </div>
+          <div class="category-content my-3 hide-content">
+              <div class="row">
+                @foreach ($products as $product)
+                  @if ($product['product_category'] == 'cetak')
+                    <div class="col-md-3 col-6 p-0 box">
+                      <a href="{{ route('product.detail', ['product' => $product->id]) }}">
+                        <div class="m-1 shadow-sm rounded-4 card">
+                          <div class="text-center">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
+                              width="100%" class="rounded-top-4" />
+                          </div>
+                          <div class="py-3 px-2 text-center">
+                            <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  @endif
+                @endforeach
               </div>
-              <div class="col-6 my-3 px-1">
-                <div class="bg-white shadow-sm py-2 rounded-3 food-category-button frozen-category-button" style="cursor: pointer">
-                  <img src="{{ asset('/images/sosis.png') }}" alt="img" height="25px" />
-                  <span class="txt-abu">Sosis</span>
-                </div>
-              </div>
+          </div>
+
+          <div>
+            <div class="row" style="margin-top: 115px">
+              <div class="col-md-12"></div>
             </div>
           </div>
+          <!-- Modal keranjang -->
+          @include('components.cart_modal')
         </div>
       </section>
-
-      <div class="food-category-content">
-        <div class="catering-content">
-          <div class="row">
-            @foreach ($products as $product)
-              @if ($product['product_category'] == 'catering' && $product['food_category'] == 'ayam')
-                <div class="col-md-3 col-6 p-0 box">
-                  <a href="{{ route('product.detail', ['product' => $product->id]) }}">
-                    <div class="m-1 shadow-sm rounded-4 card">
-                      <div class="text-center">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
-                          width="100%" class="rounded-top-4" />
-                      </div>
-                      <div class="py-3 px-2 text-center">
-                        <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              @endif
-            @endforeach
-          </div>
-        </div>
-        <div class="catering-content hide-content">
-          <div class="row">
-            @foreach ($products as $product)
-              @if ($product['product_category'] == 'catering' && $product['food_category'] == 'sapi')
-                <div class="col-md-3 col-6 p-0 box">
-                  <a href="{{ route('product.detail', ['product' => $product->id]) }}">
-                    <div class="m-1 shadow-sm rounded-4 card">
-                      <div class="text-center">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
-                          width="100%" class="rounded-top-4" />
-                      </div>
-                      <div class="py-3 px-2 text-center">
-                        <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              @endif
-            @endforeach
-          </div>
-        </div>
-      </div>
-
-      <div class="food-category-content hide-content">
-        <div class="frozen-content">
-          <div class="row">
-            @foreach ($products as $product)
-              @if ($product['product_category'] == 'frozen' && $product['food_category'] == 'risol')
-                <div class="col-md-3 col-6 p-0 box">
-                  <a href="{{ route('product.detail', ['product' => $product->id]) }}">
-                    <div class="m-1 shadow-sm rounded-4 card">
-                      <div class="text-center">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
-                          width="100%" class="rounded-top-4" />
-                      </div>
-                      <div class="py-3 px-2 text-center">
-                        <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              @endif
-            @endforeach
-          </div>
-        </div>
-        <div class="frozen-content hide-content">
-          <div class="row">
-            @foreach ($products as $product)
-              @if ($product['product_category'] == 'frozen' && $product['food_category'] == 'sosis')
-                <div class="col-md-3 col-6 p-0 box">
-                  <a href="{{ route('product.detail', ['product' => $product->id]) }}">
-                    <div class="m-1 shadow-sm rounded-4 card">
-                      <div class="text-center">
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="img" height="400px"
-                          width="100%" class="rounded-top-4" />
-                      </div>
-                      <div class="py-3 px-2 text-center">
-                        <h4 class="m-0 fw-bold">{{ $product->name }}</h4>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              @endif
-            @endforeach
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="row" style="margin-top: 115px">
-          <div class="col-md-12"></div>
-        </div>
-      </div>
-      <!-- Modal keranjang -->
-      @include('components.cart_modal')
-    </div>
-  </section>
-@endsection
+    @endsection
