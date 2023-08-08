@@ -48,4 +48,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cart::class);
     }
+
+    // Relasi dengan chat sebagai pengirim
+    public function sent_chats()
+    {
+        return $this->hasMany(Chat::class, 'sender_id');
+    }
+
+    // Relasi dengan chat sebagai penerima
+    public function received_chats()
+    {
+        return $this->hasMany(Chat::class, 'recipient_id');
+    }
 }

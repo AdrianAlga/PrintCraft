@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminChatController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginRegisController;
 use App\Http\Controllers\Admin\AdminOrderController;
@@ -36,6 +37,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('', [UserHomeController::class, 'index'])->name('home');
     Route::get('product/{product}', [UserHomeController::class, 'detailProduct'])->name('product.detail');
     Route::get('inbox', [UserInboxController::class, 'index'])->name('inbox');
+    Route::post('chat', [UserInboxController::class, 'chat'])->name('chat');
     Route::get('order', [UserOrderController::class, 'index'])->name('order');
     Route::post('pay_image/{order}', [UserOrderController::class, 'pay_image'])->name('pay_image');
     Route::get('order-history', [UserOrderController::class, 'history'])->name('order.history');
@@ -49,8 +51,6 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::post('addCart', [UserHomeController::class, 'addCart'])->name('addCart');
     Route::delete('destroyCart/{cart}', [UserHomeController::class, 'destroyCart'])->name('destroyCart');
     Route::post('order', [UserHomeController::class, 'order'])->name('order.product');
-
-
 });
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('admin')->group(function () {
@@ -63,6 +63,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('order/{order}', [AdminOrderController::class, 'show'])->name('admin.order.show');
         Route::delete('order/{order}', [AdminOrderController::class, 'destroy'])->name('admin.order.destroy');
         Route::post('order/status/{order}', [AdminOrderController::class, 'updateStatus'])->name('status.update');
+        Route::get('notification', [AdminChatController::class, 'index'])->name('admin.notification');
+        Route::post('chat', [AdminChatController::class, 'sendChat'])->name('admin.send.chat');
     });
 });
-Route::get('/admin/notification', fn()=> view('admin.notification.index', ["title" => "Notification"]))->name('admin.notification');

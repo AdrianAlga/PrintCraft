@@ -93,55 +93,67 @@
     </div>
 
     <!-- Modal Contact operator-->
-    <form action="">
-      <div class="modal fade" id="operator" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6"></div>
-                  <div class="col-6">
-                    <div class="d-flex align-items-center justify-content-end">
-                      <p class="m-0 pe-2 txt-justify">Hello! lore</p>
-                      <img src="{{ asset('images/user.png') }}" alt="img" height="50px"
-                        class="rounded-circle bg-secondary align-self-start ">
+
+    <div class="modal fade" id="operator" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              @foreach ($chats as $chat)
+                @if ($chat->sender->id == auth()->user()->id)
+                  <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6">
+                      <div class="d-flex align-items-center justify-content-end">
+                        <p class="m-0 pe-2 txt-justify">{{ $chat->message }}</p>
+                        <img src="{{ asset('storage/' . $chat->sender->image) }}" alt="img" height="50px"
+                          class="rounded-circle bg-secondary align-self-start ">
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="d-flex align-items-center">
-                      <img src="{{ asset('images/operator.png') }}" alt="img" height="50px"
-                        class="rounded-circle bg-secondary align-self-start ">
-                      <p class="m-0 ps-2 txt-justify">Hello! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
-                        nostrum iusto consequuntur voluptatibus molestiae, nihil voluptates iure vitae quaerat aliquam
-                        reiciendis dicta ipsum, tempora eum sequi totam at expedita temporibus?</p>
+                @else
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="d-flex align-items-center">
+                        <img src="{{ asset('storage/' . $chat->sender->image) }}" alt="img" height="50px"
+                          class="rounded-circle bg-secondary align-self-start ">
+                        <p class="m-0 ps-2 txt-justify">{{ $chat->message }}</p>
+                      </div>
                     </div>
+                    <div class="col-6"></div>
                   </div>
-                  <div class="col-6"></div>
-                </div>
-              </div>
+                @endif
+              @endforeach
             </div>
-            <div class="modal-footer">
-              <div class="container">
+          </div>
+          <div class="modal-footer">
+            <div class="container">
+              <form action="{{ route('chat') }}" method="POST">
+                @csrf
                 <div class="row">
                   <div class="col-10">
-                    <input type="text" class="form-control w-100" id="operator">
+                    <input type="text" name="message"
+                      class="form-control w-100 @error('message') is-invalid @enderror" id="operator">
+                    @error('message')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                    @enderror
                   </div>
                   <div class="col-2 text-center">
-                    <button type="button" class="btn btn-primary">Kirim</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+
   </section>
 @endsection
