@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('price');
             $table->integer('stock')->unsigned();
-            $table->enum('product_category', ['catering', 'frozen']);
-            $table->enum('food_category', ['ayam', 'sapi', 'risol', 'sosis']);
+            $table->enum('product_category', ['desain', 'cetak']);
             $table->string('image')->default('product/default.jpg');
             $table->string('description');
             $table->timestamps();

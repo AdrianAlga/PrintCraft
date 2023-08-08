@@ -58,14 +58,9 @@
                         <td>{{ $product->stock }}</td>
                       </tr>
                       <tr>
-                        <td>Kategori Makanan</td>
+                        <td>Kategori</td>
                         <td>:</td>
                         <td>{{ $product->product_category }}</td>
-                      </tr>
-                      <tr>
-                        <td>Kategori Menu</td>
-                        <td>:</td>
-                        <td>{{ $product->food_category }}</td>
                       </tr>
                       <tr>
                         <td>Catatan Produk</td>
