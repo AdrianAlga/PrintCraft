@@ -11,7 +11,7 @@
         <div class="col-12">
           <div class="row justify-content-center">
             <div class="col-md-9 text-center text-white">
-              <h1>Warung Jawa</h1>
+              <h1>Print Craft</h1>
             </div>
           </div>
           <div class="row justify-content-center">

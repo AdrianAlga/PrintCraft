@@ -93,7 +93,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="container">
@@ -101,7 +101,7 @@
                           @if ($chat->sender->id == $user->id && $chat->recipient->id == auth()->user()->id)
                           {{-- @if ($chat->sender->id != auth()->user()->id) --}}
                             <div class="row">
-                              <div class="col-6">
+                              <div class="col-6 mb-2">
                                 <div class="d-flex align-items-center">
                                   <img src="{{ asset('storage/' . $chat->sender->image) }}" alt="img" height="50px"
                                     class="rounded-circle bg-secondary align-self-start ">
@@ -113,7 +113,7 @@
                           @elseif($chat->sender->id == auth()->user()->id && $chat->recipient->id == $user->id)
                             <div class="row">
                               <div class="col-6"></div>
-                              <div class="col-6">
+                              <div class="col-6 mb-2">
                                 <div class="d-flex align-items-center justify-content-end">
                                   <p class="m-0 pe-2 txt-justify">
                                     {{ $chat->message }}
@@ -135,7 +135,7 @@
                           <div class="row">
                             <div class="col-10">
                               <input name="message" type="text"
-                                class="form-control w-100 @error('message') is-invalid @enderror" id="operator">
+                                class="form-control text-dark w-100 @error('message') is-invalid @enderror" id="operator">
                               @error('message')
                                 <div class="invalid-feedback">
                                   {{ $message }}
@@ -143,7 +143,7 @@
                               @enderror
                             </div>
                             <div class="col-2 text-center">
-                              <button type="submit" class="btn btn-primary">Kirim</button>
+                              <button type="submit" class="btn btn-secondary">Kirim</button>
                             </div>
                           </div>
                         </form>
@@ -160,7 +160,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Informasi User</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="container">

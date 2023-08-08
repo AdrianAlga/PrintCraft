@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=PT+Serif&display=swap');
 
 body {
-    background-image: url(../images/Bglogin.jpg);
+    background-image: url(../images/bg.jpg);
     height: 100vh;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.486);
+    background-color: rgba(0, 0, 0, 0.653) !important;
     background-blend-mode: multiply;
     background-position: center;
 }

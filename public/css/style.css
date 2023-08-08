@@ -7,11 +7,11 @@
 
 /* CSS Variabel */
 :root {
-    --orange: #fffffe;
+    --orange: #1f1f1f;
     --merah: rgba(255, 67, 67, 1);
     --abu-abu: #fffffe;
     --abu-abu2: #ffffff;
-    --color5: rgb(150, 115, 255);
+    --color5: #d4d8f0 !important;
     --font-txt: 'Poppins', sans-serif;
     --weight-txt-header: 700;
     --size-txt-header: 40px;
@@ -46,12 +46,16 @@ body{
 }
 
 .bg-orange {
-    background-color: var(--orange) !important;
+    background-color: white;
 }
 
 /* font txt */
 h1,h2,h3,h4,h5,p,th,td,button,span,label{
     font-family: var(--font-txt);
+}
+
+th,td {
+    background: transparent !important;
 }
 
 /* Ketebalan txt Header */

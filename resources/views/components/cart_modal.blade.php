@@ -59,7 +59,7 @@
             </div>
             <div class="col-4 text-end">
               <a href="{{ route('checkout') }}">
-                <button type="button" class="btn btn-sm bg-orange text-white">Check Out</button>
+                <button type="button" class="btn btn-sm bg-secondary text-white">Check Out</button>
               </a>
             </div>
           </div>

@@ -1,19 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Encode+Sans:wght@500&family=PT+Serif&family=Poppins:wght@700&family=Raleway:ital@0;1&display=swap");
 
-p,a,th,td,h1,h2,h3,h4,h5 {
-    font-family: 'Encode Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+th,
+td,
+label,
+trix-editor,
+input,
+.modal {
+    color: white !important;
 }
 
 #dashboard {
-    background-image: url(../images/background.jpg);
+    height: 100vh;
+}
+
+.btn {
+    background-color: #403e3e;
+    color: white;
+}
+.btn:hover {
+    background-color: #2c2b2b;
+    color: white;
+}
+
+body {
+    background-image: url(../images/bg1.jpg);
     height: 100vh;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.432);
     background-blend-mode: multiply;
+    font-family: "Encode Sans", sans-serif;
 }
 
+/* animasi img */
+.image-container {
+    animation: moveUpDown 2s infinite alternate; /* Animation duration, timing, and direction */
+}
+
+@keyframes moveUpDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(50px); /* Distance to move the image up */
+    }
+}
+/* end animasi img */
+
+/* card */
+.card {
+    position: relative;
+    overflow: hidden;
+    background-color: #403e3e96;
+    /* backdrop-filter: blur(10px); */
+    box-shadow: 1px 1px 5px rgba(254, 254, 254, 0.484);
+}
+
+.modal-content {
+    backdrop-filter: blur(10px);
+    background-color: #403e3eae;
+}
+.modal {
+    backdrop-filter: blur(2px);
+    background-color: #403e3e5e;
+}
+
+.offcanvas {
+    background-color: #403e3eb1;
+    backdrop-filter: blur(2px);
+}
+/* end card */
+
 .navbar {
-    background-color: #094067;
+    background-color: #3a3d3e;
 }
 
 #offcanvasNavbar {
@@ -39,13 +103,6 @@ a {
 .logout a {
     text-decoration: none;
     color: rgb(2, 2, 2);
-}
-
-/* Form */
-.card {
-    background: white;
-    border-radius: 10px;
-    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .shadow {
@@ -85,7 +142,7 @@ a {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #685858;
+    color: #ffffff;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #191818;
@@ -126,7 +183,7 @@ a {
 }
 
 .login-box button:hover {
-    background: #0398f473;
+    background: #6e707273;
     color: #000000;
     border-radius: 10px;
 }
@@ -152,7 +209,7 @@ a {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #1303f4);
+    background: linear-gradient(90deg, transparent, #ffffff);
     animation: btn-anim1 2s linear infinite;
 }
 

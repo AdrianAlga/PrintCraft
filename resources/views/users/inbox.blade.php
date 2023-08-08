@@ -27,7 +27,7 @@
                 <div class="row">
                   <div class="col-1">
                     <div>
-                      <img src="{{ asset('images/logo.png') }}" alt="img" height="50px" width="50px"
+                      <img class="bg-secondary rounded-circle" src="{{ asset('images/logo.png') }}" alt="img" height="50px" width="50px"
                         class="rounded-circle" />
                     </div>
                   </div>
@@ -35,7 +35,7 @@
                     <div class="container">
                       <div class="row">
                         <div class="col-12 text-start">
-                          <h5 class="fw-bold">Warung Jawa</h5>
+                          <h5 class="fw-bold">Print Craft</h5>
                         </div>
                       </div>
                       <div class="row">
@@ -107,7 +107,7 @@
                 @if ($chat->sender->id == auth()->user()->id)
                   <div class="row">
                     <div class="col-6"></div>
-                    <div class="col-6">
+                    <div class="col-6 mb-2">
                       <div class="d-flex align-items-center justify-content-end">
                         <p class="m-0 pe-2 txt-justify">{{ $chat->message }}</p>
                         <img src="{{ asset('storage/' . $chat->sender->image) }}" alt="img" height="50px"
@@ -117,7 +117,7 @@
                   </div>
                 @else
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-6 mb-2">
                       <div class="d-flex align-items-center">
                         <img src="{{ asset('storage/' . $chat->sender->image) }}" alt="img" height="50px"
                           class="rounded-circle bg-secondary align-self-start ">

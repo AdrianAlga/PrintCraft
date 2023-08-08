@@ -64,12 +64,12 @@
               </div>
             </div>
           </div>
-          <div class="row card shadow p-4 mt-3">
+          <div class="row shadow p-4 mt-3">
             <div class="col-md-12">
               <h4 class="card-header">Detail</h4>
               <div class="card-body">
                 <div class="col-2 col-md-6">
-                  <table class="table table-borderless table-responsive">
+                  <table class="table table-borderless">
                     <tbody>
                       <tr>
                         <td>Jumlah Deposit</td>

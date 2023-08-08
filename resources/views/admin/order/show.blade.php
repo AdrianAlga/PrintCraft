@@ -149,7 +149,7 @@
           </div>
           <div>
             <a href="{{ route('admin.order.index') }}">
-              <button type="button" class="btn btn-primary"
+              <button type="button" class="btn"
                 style="--bs-btn-padding-y: 0.25rem; --bs-btn-padding-x: 0.5rem; --bs-btn-font-size: 0.75rem">Back</button>
             </a>
           </div>

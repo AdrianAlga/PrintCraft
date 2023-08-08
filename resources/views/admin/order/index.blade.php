@@ -95,7 +95,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="deleteModal-{{ $order->id }}Label">Peringatan</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">Apakah anda ingin menghapusnya {{ $order->name }}?</div>
                         <div class="modal-footer">
@@ -103,7 +103,7 @@
                           <form action="{{ route('admin.order.destroy', ['order' => $order->id]) }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-primary px-4">Ya</button>
+                            <button type="submit" class="btn btn-secondary px-3">Ya</button>
                           </form>
                         </div>
                       </div>

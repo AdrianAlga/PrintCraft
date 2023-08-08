@@ -7,7 +7,7 @@
 @section('body')
   <section id="succes">
     <div class="container h-100">
-      <div class="row h-100 align-items-center text-center text-white">
+      <div class="row h-100 align-items-center text-center">
         <div class="col-12">
           <div class="container-fluid">
             <div class="row justify-content-center">
@@ -18,7 +18,7 @@
                 <h3>Pesanan Anda Telah Sukses</h3>
               </div>
               <div class="col-12">
-                <p>Terima kasih telah mempercayakan Warung Jawa untuk segala kebutuhan catering & Frozen Anda</p>
+                <p>Terima Kasih</p>
               </div>
               <div class="col-10 col-md-6 py-5">
                 <a href="{{ route('home') }}">

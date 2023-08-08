@@ -14,14 +14,14 @@
           aria-labelledby="offcanvasNavbarLabel" data-bs-display="push">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Admin</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <div class="card">
                 <div class="container">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('admin.index') }}"><i
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.index') }}"><i
                         class="bi bi-house-door"></i>
                       Beranda</a>
                   </li>
@@ -30,8 +30,8 @@
               <div class="card mt-2">
                 <div class="container">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('admin.product.index') }}"><i
-                        class="bi bi-egg-fried"></i>
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.product.index') }}"><i
+                        class="bi bi-cast"></i>
                       Produk</a>
                   </li>
                 </div>
@@ -39,7 +39,7 @@
               <div class="card mt-2">
                 <div class="container">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('admin.order.index') }}"><i
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.order.index') }}"><i
                         class="bi bi-cart3"></i>
                       Pesanan</a>
                   </li>
@@ -48,7 +48,7 @@
               <div class="card mt-2">
                 <div class="container">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('admin.message') }}"><i
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.message') }}"><i
                         class="bi bi-chat-dots"></i>
                       Message</a>
                   </li>
@@ -57,7 +57,7 @@
               <div class="card mt-2">
                 <div class="container">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('admin.notification') }}"><i
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.notification') }}"><i
                         class="bi bi-bell"></i>
                       Notifikasi</a>
                   </li>

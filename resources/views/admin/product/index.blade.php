@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @push('style')
-  {{-- <link rel="stylesheet" href="{{ asset('/css/style.css') }}"> --}}
+  {{-- <link rel="stylesheet" href="{{ asset('/css/admin.css') }}"> --}}
 @endpush
 
 @section('body')
@@ -17,7 +17,7 @@
           <p>menambah, mengedit, atau menghapus produk</p>
         </div>
         <div class="col-md-4">
-          <a href="{{ route('admin.product.create') }}"><button type="button" class="btn btn-primary">Buat
+          <a href="{{ route('admin.product.create') }}"><button type="button" class="btn">Buat
               Produk</button></a>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-md-12 p-4">
           <div class="table-responsive">
-            <table class="table table-bordered text-center">
+            <table class="table table-dark border-2 border table-bordered text-center">
               <thead>
                 <tr>
                   <th class="col-md-0">No.</th>
@@ -62,8 +62,8 @@
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="deleteModal-{{ $product->id }}Label">Modal title</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <h1 class="modal-title fs-5" id="deleteModal-{{ $product->id }}Label">Peringatan</h1>
+                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">Apakah anda ingin menghapusnya {{ $product->name }}?</div>
                         <div class="modal-footer">
@@ -71,7 +71,7 @@
                           <form action="{{ route('admin.product.destroy', ['product' => $product->id]) }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-primary">Ya</button>
+                            <button type="submit" class="btn btn-secondary px-3">Ya</button>
                           </form>
                         </div>
                       </div>

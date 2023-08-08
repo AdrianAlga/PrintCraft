@@ -19,7 +19,7 @@
     <div class="container-fluid card shadow-lg">
       <div class="row mt-3">
         <div class="col-2">
-          <a href="{{ route('admin.product.index') }}"><button type="button" class="btn btn-primary"><i
+          <a href="{{ route('admin.product.index') }}"><button type="button" class="btn"><i
                 class="bi bi-arrow-left-circle"></i></button></a>
         </div>
         <div class="col-12 text-center">
@@ -47,7 +47,7 @@
                       {{ $message }}
                     </div>
                   @enderror
-                  <label for="name" class="text-black">Nama Produk</label>
+                  <label for="name">Nama Produk</label>
                 </div>
                 <div class="user-box mt-2">
                   <input type="number" name="price" id="price" class="@error('price') is-invalid @enderror"
@@ -57,7 +57,7 @@
                       {{ $message }}
                     </div>
                   @enderror
-                  <label for="price" class="text-black">Harga Produk</label>
+                  <label for="price">Harga Produk</label>
                 </div>
                 <div class="user-box mt-2">
                   <input type="number" name="stock" id="stock" class="@error('stock') is-invalid @enderror"
@@ -67,7 +67,7 @@
                       {{ $message }}
                     </div>
                   @enderror
-                  <label for="stock" class="text-black">Jumlah Stok</label>
+                  <label for="stock">Jumlah Stok</label>
                 </div>
                 <div class="container">
                   <div class="row">
@@ -114,7 +114,7 @@
                 <div class="row text-center my-4">
                   <div class="col-md-12">
                     <div class="login-box">
-                      <button type="submit" class="card">
+                      <button type="submit" class="card text-white">
                         Tambah
                         <span></span>
                       </button>

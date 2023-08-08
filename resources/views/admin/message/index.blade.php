@@ -17,7 +17,7 @@
           <p>Menambahkan pesan informasi kepada pelanggan</p>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#pesan">Buat
+          <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#pesan">Buat
             Pesan</button>
         </div>
       </div>
@@ -61,7 +61,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <h1 class="modal-title fs-5" id="deleteModal-{{ $message->id }}Label">Hapus?</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">Apakah anda ingin menghapusnya {{ $message->message }}?</div>
                         <div class="modal-footer">
@@ -69,7 +69,7 @@
                           <form action="{{ route('admin.message.destroy', ['message' => $message->id]) }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-primary px-4">Ya</button>
+                            <button type="submit" class="btn btn-secondary px-4">Ya</button>
                           </form>
 
                         </div>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                      <button type="submit" class="btn btn-primary">Kirim</button>
+                      <button type="submit" class="btn btn-secondary">Kirim</button>
                     </div>
                   </div>
                 </div>

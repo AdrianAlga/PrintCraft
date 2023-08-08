@@ -5,16 +5,16 @@
 @endpush
 
 @section('body')
-  <section id="navbar">
-    <div class="container-fluid fixed-bottom">
-      <div class="row justify-content-center text-center bg-abu-abu py-3 font-txt small"
+  <section>
+    <div class="container-fluid fixed-bottom bg-color5">
+      <div class="row justify-content-center text-center py-3 font-txt small"
         style="box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3)">
         <div class="col-6">
           <form action="{{ route('addCart') }}" method="post">
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="amount" value="1" class="amount-input">
-            <button type="submit" class="btn bg-orange text-white btn- w-100">
+            <button type="submit" class="btn border border-secondary btn- w-100">
               <i class="bi bi-plus-lg"></i>
               Keranjang
             </button>
@@ -27,7 +27,7 @@
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="checkout" value="true">
             <input type="hidden" name="amount" value="1" class="amount-input2">
-            <button type="submit" class="btn bg-orange text-white btn- w-100">Pesan Sekarang</button>
+            <button type="submit" class="btn border border-secondary btn- w-100">Pesan Sekarang</button>
             {{-- <button type="submit" class="btn btn-secondary">Check Out</button> --}}
           </form>
           {{-- <a href="{{ route('checkout') }}">
@@ -36,20 +36,20 @@
       </div>
     </div>
   </section>
+  
   <section id="product" class="pb-5">
     <div class="container font-txt mb-4">
       <div class="row my-3">
         <div class="col-md-12">
           <div class="container">
             <div class="row">
-              <div class="col-6 d-flex">
+              <div class="col-6">
                 <a href="{{ route('home') }}">
                   <h2><i class="bi bi-arrow-left text-dark"></i></h2>
                 </a>
-                <h4 class="font-txt fw-bold ms-3 py-1">Makanan</h4>
               </div>
               <div class="col-6 text-end">
-                <button data-bs-toggle="modal" data-bs-target="#cartModal" style="border: none; position: relative;">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#cartModal" style="border: none; position: relative;">
                   <i class="bi bi-cart fs-3"></i>
                   <span class="text-center text-white fw-bold rounded-circle"
                     style="width: 20px; height: 20px; background: red; position: absolute; top: 0; left: 25px;">
@@ -143,7 +143,7 @@
                           </tr>
                           <tr>
                             <th scope="col-1">
-                              Harga /porsi
+                              Harga
                             </th>
                             <th scope="col">
                               :
