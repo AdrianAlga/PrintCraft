@@ -14,7 +14,7 @@ class UserHomeController extends Controller
     {
         return view('users.home', [
             "title" => "Home",
-            "products" => Product::all(),
+            "products" => Product::where('stock', '>', 0)->get(),
             "carts" => Cart::where("user_id", auth()->user()->id)->get(),
             "cart_count" => Cart::where("user_id", auth()->user()->id)->count(),
         ]);

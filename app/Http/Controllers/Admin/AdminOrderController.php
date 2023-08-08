@@ -10,14 +10,16 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminOrderController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('admin.order.index', [
             "title" => "Pesanan",
             "orders" => Order::all(),
         ]);
     }
 
-    public function show(Order $order) {
+    public function show(Order $order)
+    {
         $products = [];
         $order->products_id = json_decode($order->products_id);
         $order->amounts = json_decode($order->amounts);
@@ -35,7 +37,8 @@ class AdminOrderController extends Controller
         ]);
     }
 
-    public function destroy(Order $order) {
+    public function destroy(Order $order)
+    {
         if ($order->pay_image) {
             Storage::delete($order->pay_image);
         }
@@ -43,11 +46,42 @@ class AdminOrderController extends Controller
         return redirect()->route("admin.order.index")->with('success', "Order Berhasil dihapus");
     }
 
-    public function updateStatus(Request $request, Order $order) {
+    public function updateStatus(Request $request, Order $order)
+    {
         $validated = $request->validate([
             "status" => "required|in:success,failed",
         ]);
-        $order->update($validated);
+        $result = $order->update($validated);
+        if ($validated['status'] == "success" && $result) {
+            $products = [];
+            $order->products_id = json_decode($order->products_id);
+            $order->amounts = json_decode($order->amounts);
+
+            foreach ($order->products_id as $index => $productId) {
+                $product = Product::find($productId);
+
+                if ($product) {
+                    $amount = $order->amounts[$index];
+
+                    // Mengurangi stok produk berdasarkan jumlah yang dipesan
+                    $newStock = $product->stock - $amount;
+
+                    // Pastikan stok tidak negatif
+                    if ($newStock >= 0) {
+                        $product->stock = $newStock;
+                        $product->save();
+
+                        $products[$index] = $product;
+                        $products[$index]["amount"] = $amount;
+                    } else {
+                        // Handle jika stok tidak mencukupi
+                        // Anda bisa menampilkan pesan atau melakukan tindakan lainnya
+                        $products[$index] = null;
+                    }
+                }
+            }
+        }
+
         return back();
     }
 }
